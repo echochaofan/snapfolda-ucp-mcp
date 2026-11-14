@@ -1,9 +1,10 @@
 # SnapFolda UCP MCP
 
-MCP endpoint for the SnapFolda store. Shopify hosts it on the store's own domain.
+MCP endpoint for the [SnapFolda store](https://snapfolda.com). Shopify hosts it on the store's own domain, so the endpoint shares the store's hostname rather than running as a separate service.
 
 | | |
 |---|---|
+| Store | <https://snapfolda.com> |
 | Endpoint | `https://snapfolda.com/api/ucp/mcp` |
 | Transport | Streamable HTTP, POST only |
 | Protocol | MCP `2025-06-18`, UCP `2026-08-25` |
