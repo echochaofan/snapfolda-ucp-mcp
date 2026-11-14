@@ -13,6 +13,34 @@ MCP endpoint for the [SnapFolda store](https://snapfolda.com). Shopify hosts it 
 
 This repository holds notes and a client example. The server runs on Shopify's platform, so questions about its behaviour belong to Shopify.
 
+## What the store sells
+
+SnapFolda sells iPhone wallet cases. 143 style families are cut for 33 models, which makes 4,719 products and 19,536 variants, priced $24.99 to $89.99.
+
+Seven functional families cover the range: card and slim card holder, folio and flip wallet, magnetic flip, card wallet, detachable and removable wallet, crossbody, MagSafe wallet. Catalog makeup, product shape and the field quirks worth knowing are in [`docs/catalog.md`](docs/catalog.md). The model list is in [`docs/models.md`](docs/models.md).
+
+## What a search returns
+
+`iPhone 18 Pro Max wallet case for travel` comes back with 10 hits from that one model family:
+
+- Vasa Note, folio wallet case, $24.99
+- Split Decision, removable wallet case, $34.99
+- Mandala Horizon, folio wallet case, $24.99
+
+Price is per style and colour is the variant, so a hit is a style, not a SKU. The full response, captured from the live endpoint, is in [`examples/search_catalog_sample.json`](examples/search_catalog_sample.json).
+
+## Store facts
+
+Taken from the store's own policy pages. Useful when an agent has to answer "when will it arrive" without sending the buyer elsewhere.
+
+- Free tracked shipping, with duties and taxes prepaid
+- Processing takes 1 to 3 business days
+- Delivery takes 4 to 12 business days to the UK, France and Italy, and 7 to 12 to the US
+- Returns run for 30 days after delivery, unused and in original packaging, with an RMA. Change of mind returns are paid by the buyer and there is no restocking fee
+- 12 month warranty covers manufacturing defects
+- Refunds are issued 2 business days after inspection and post in 3 to 5 days
+- Support is support@snapfolda.com, answered within 24 hours on business days
+
 ## Discovery
 
 Two documents describe the endpoint:
@@ -88,6 +116,9 @@ The store has about 4,700 products, so catalog search can return large payloads.
 
 - `examples/python_client.py` connects, lists the tools, and runs one search
 - `examples/curl.md` has copy-paste requests
+- `examples/search_catalog_sample.json` is a real response, trimmed to two products
+- `docs/catalog.md` covers catalog size, product shape and field quirks
+- `docs/models.md` lists the 33 device families
 
 ## License
 
